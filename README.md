@@ -46,7 +46,7 @@ yarn start
 
 #### Full
 
-![YYZ TECH Full Home](resources/full.png)
+![YYZ TECH Full Home](resources/fullpage.png)
 
 #### Item
 
