@@ -9,14 +9,18 @@ const ItemComponent = ({ item, id }) => {
   const dispatch = useDispatch();
   const name = item.name
     .split(" ")
-    .slice(0, 4)
+    .slice(0, 3)
     .join()
     .replace(/,/g, " ")
     .replace(/-/g, "");
   return (
     <Wrapper>
       <StyledLink to={`/item/${item._id}`}>
-        <Img src={item.imageSrc} alt={item.name} />
+        <Img
+          style={{
+            backgroundImage: `url(${item.imageSrc}`,
+          }}
+        ></Img>
 
         <Details>
           <h4>{name}</h4>
@@ -24,7 +28,7 @@ const ItemComponent = ({ item, id }) => {
         </Details>
       </StyledLink>
       <P>
-        <span>- {item.category}</span>
+        <span>{item.category}</span>
       </P>
       {cartItem[id] ? (
         <Button
@@ -53,14 +57,20 @@ export default ItemComponent;
 
 const Wrapper = styled.div``;
 
-const Details = styled.div``;
+const Details = styled.div`
+  font-size: 0.9em;
+  p {
+    margin: 5px 0px;
+  }
+`;
 
-const Img = styled.img`
+const Img = styled.div`
+  border-radius: 2px;
   margin-bottom: 20px;
-  border-bottom: 2px solid darkgray;
-  padding: 20px 0;
   height: 150px;
-  width: 180px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
 `;
 
 const StyledLink = styled(Link)`
@@ -70,23 +80,24 @@ const StyledLink = styled(Link)`
 `;
 
 const Button = styled.button`
-  margin-top: 20px;
-  margin-bottom: 40px;
-  height: 40px;
-  width: 100px;
+  margin-top: 10px;
+  height: 30px;
+  width: 100%;
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
   background-color: black;
-  font-weight: bold;
   color: white;
+  text-transform: uppercase;
+  font-family: "Titillium Web", sans-serif;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 
   &:hover {
-    background-color: #4c84a5;
+    background-color: var(--red);
   }
 `;
 
 const P = styled.p`
-  margin-top: 15px;
+  color: var(--red);
+  font-size: 0.7em;
 `;

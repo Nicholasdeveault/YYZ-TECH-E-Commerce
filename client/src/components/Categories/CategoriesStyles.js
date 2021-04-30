@@ -17,8 +17,10 @@ export const Section = styled.section`
   //FEEL FREE TO CHANGE ALL OF THIS, I did it as grid but do whatever
   //you think works best!!!
   display: grid;
-  grid-template-columns: repeat(4, 200px);
-  width: 800px;
+  grid-template-columns: repeat(5, 155px);
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  width: 875px;
   margin: 0 auto;
   align-items: center;
 `;

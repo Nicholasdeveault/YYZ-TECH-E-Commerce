@@ -17,52 +17,52 @@ const CartItems = () => {
         {cartItem ? (
           carts.map((cart) => {
             return (
-                <Li key={cart._id}>
-                  <Div>
-                    <Button
+              <Li key={cart._id}>
+                <Div>
+                  <Button
+                    onClick={() => {
+                      dispatch(removeItem(cart));
+                    }}
+                  >
+                    <TiDeleteOutline
+                      style={{ width: "20px", height: "20px", color: "gray" }}
+                    />
+                  </Button>
+                  <NavLink to={`/item/${cart._id}`}>
+                    <ItemName>
+                      <p>
+                        {cart.name
+                          .split(" ")
+                          .slice(0, 2)
+                          .join()
+                          .replace(/,/g, " ")
+                          .replace(/-/g, "")}
+                      </p>
+                    </ItemName>
+                    <Img src={cart.imageSrc} alt="cart item" />
+                  </NavLink>
+                  <Container>
+                    <Btn
+                      disabled={cart.quantity === 1 && true}
                       onClick={() => {
-                        dispatch(removeItem(cart));
+                        dispatch(minusOnefromCart(cart));
                       }}
                     >
-                      <TiDeleteOutline
-                        style={{ width: "20px", height: "20px", color: "gray" }}
-                      />
-                    </Button>
-                    <NavLink to={`/item/${cart._id}`}>
-                      <ItemName>
-                        <p>
-                          {cart.name
-                            .split(" ")
-                            .slice(0, 3)
-                            .join()
-                            .replace(/,/g, " ")
-                            .replace(/-/g, "")}
-                        </p>
-                      </ItemName>
-                      <Img src={cart.imageSrc} alt="cart item" />
-                    </NavLink>
-                    <Container>
-                      <Btn
-                        disabled={cart.quantity === 1 && true}
-                        onClick={() => {
-                          dispatch(minusOnefromCart(cart));
-                        }}
-                      >
-                        -
-                      </Btn>
-                      <div>{cart.quantity}</div>
-                      <Btn
-                        disabled={cart.numInStock === 0 && true}
-                        onClick={() => {
-                          dispatch(addItemInCart(cart));
-                        }}
-                      >
-                        +
-                      </Btn>
-                    </Container>
-                    <div>{cart.price}</div>
-                  </Div>
-                </Li>
+                      -
+                    </Btn>
+                    <div>{cart.quantity}</div>
+                    <Btn
+                      disabled={cart.numInStock === 0 && true}
+                      onClick={() => {
+                        dispatch(addItemInCart(cart));
+                      }}
+                    >
+                      +
+                    </Btn>
+                  </Container>
+                  <div>{cart.price}</div>
+                </Div>
+              </Li>
             );
           })
         ) : (
@@ -99,7 +99,7 @@ const Wrapper = styled.div`
   align-items: center;
   line-height: 40px;
   color: black;
-  width: 1000px;
+  width: 900px;
 `;
 
 const Img = styled.img`

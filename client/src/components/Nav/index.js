@@ -11,9 +11,8 @@ const Nav = () => {
   //Change HOVER color if globalstyles.js
   // current at end of sheet a:hover{color:lightgrey}
 
-
   const cartItem = useSelector((state) => state.items.cart);
-  
+
   const [totalItem, setTotalItem] = useState(0);
   useEffect(() => {
     let carts = Object.values(cartItem);
@@ -35,9 +34,7 @@ const Nav = () => {
           to="/Homepage"
         >
           <li>
-            <BiListCheck size={60} />
-
-            <h1>LISTED</h1>
+            <h1>YYZ TECH</h1>
           </li>
         </NavLink>
 
@@ -135,6 +132,7 @@ const NavWrapper = styled.nav`
     list-style-type: none;
     color: white;
     font-size: 20px;
+    text-transform: uppercase;
   }
 
   li:hover {
