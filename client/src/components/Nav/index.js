@@ -132,6 +132,7 @@ const NavWrapper = styled.nav`
     list-style-type: none;
     color: white;
     font-size: 20px;
+    text-transform: uppercase;
   }
 
   li:hover {
