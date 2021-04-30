@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 90vh;
+  height: 93vh;
 `;
 
 const Logo = styled.div`
