@@ -25,7 +25,7 @@ const Cart = () => {
 
   return (
     <>
-      <H2>Shopping Cart</H2>
+      <H2>Your Cart</H2>
       {total === 0 && <P>Your cart is empty</P>}
       <Main>
         {carts ? (
@@ -64,7 +64,8 @@ const H2 = styled.h2`
   margin: 55px 0px;
   font-weight: bold;
   font-size: 35px;
-  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "Archivo Black", sans-serif;
 `;
 
 const Wrapper = styled.div`
