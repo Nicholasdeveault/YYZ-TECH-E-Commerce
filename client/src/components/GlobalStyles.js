@@ -139,7 +139,9 @@ h1 {
   font-family: 'Archivo Black', sans-serif;
 }
 
+body{
+  --red: #9E0A0F;
+}
 `;
-
 
 export default GlobalStyles;
