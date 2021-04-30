@@ -142,6 +142,10 @@ h1 {
 body{
   --red: #9E0A0F;
 }
+
+button{
+  cursor: pointer;
+}
 `;
 
 export default GlobalStyles;
