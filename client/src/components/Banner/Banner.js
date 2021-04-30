@@ -50,13 +50,13 @@ const Logo = styled.div`
   }
   h2 {
     text-transform: uppercase;
-    font-size: 6em;
+    font-size: 7em !important;
     color: white;
     font-family: "Archivo Black", sans-serif;
   }
 
   h2:last-of-type {
-    font-size: 4.5em;
+    font-size: 5em !important;
   }
 
   h3 {

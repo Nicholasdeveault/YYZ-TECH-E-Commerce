@@ -8,6 +8,7 @@ import ItemComponent from "./ItemComponent";
 import Banner from "./Banner/Banner";
 import Welcome from "./Welcome";
 import geoBackground from "../assets/geoBackground.jpg";
+import Footer from "./Footer/Footer";
 
 const HomePage = () => {
   const items = useSelector((state) => state.items);
@@ -54,21 +55,25 @@ const HomePage = () => {
               ))}
           </Section>
         </New>
-        <h2>Sale</h2>
-        <Section>
-          {saleArr &&
-            saleArr.map((item) => (
-              <Div key={item._id}>
-                <ItemComponent item={item} id={item._id} />
-              </Div>
-            ))}
-        </Section>
+        <Sale>
+          <h2>Sale</h2>
+          <Section>
+            {saleArr &&
+              saleArr.map((item) => (
+                <Div key={item._id}>
+                  <ItemComponent item={item} id={item._id} />
+                </Div>
+              ))}
+          </Section>{" "}
+        </Sale>
+
         {!saleArr && !newArr && (
           <Loader>
             <Spinner />
           </Loader>
         )}
       </Wrapper>
+      <Footer />
     </>
   );
 };
@@ -98,10 +103,30 @@ const Section = styled.section`
 `;
 
 const New = styled.div`
-  padding: 20px;
+  padding: 20px 0px;
   background-image: url(${geoBackground});
   background-size: cover;
   background-position: center;
+  h2 {
+    color: white;
+    margin: 20px 0px;
+  }
+  p,
+  h4 {
+    color: white;
+  }
+  button {
+    background-color: var(--red);
+  }
 `;
+
+const Sale = styled.div`
+  padding: 20px 0px;
+  h2 {
+    margin: 20px 0px;
+  }
+`;
+
+const Divider = styled.div``;
 
 export default HomePage;

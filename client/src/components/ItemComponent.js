@@ -58,13 +58,14 @@ export default ItemComponent;
 const Wrapper = styled.div``;
 
 const Details = styled.div`
-  font-size: 0.7em;
+  font-size: 0.9em;
   p {
     margin: 5px 0px;
   }
 `;
 
 const Img = styled.div`
+  border-radius: 2px;
   margin-bottom: 20px;
   height: 150px;
   width: 150px;
@@ -80,13 +81,14 @@ const StyledLink = styled(Link)`
 
 const Button = styled.button`
   margin-top: 10px;
-  height: 40px;
+  height: 30px;
   width: 100%;
   border: none;
   border-radius: 2px;
   background-color: black;
-  font-weight: bold;
   color: white;
+  text-transform: uppercase;
+  font-family: "Titillium Web", sans-serif;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 

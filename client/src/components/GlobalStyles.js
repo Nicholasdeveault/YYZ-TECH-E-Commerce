@@ -105,7 +105,7 @@ section {
 }
 body {
   line-height: 1;
-  font-family: 'Martel Sans', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 ol,
 ul

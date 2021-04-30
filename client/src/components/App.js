@@ -21,10 +21,9 @@ import Fitness from "./Categories/Fitness.js";
 import Medical from "./Categories/Medical.js";
 import Entertainment from "./Categories/Entertainment.js";
 import ShopAll from "./Categories/ShopAll";
-import Checkout from "./checkout/Checkout"
+import Checkout from "./checkout/Checkout";
 import Footer from "./Footer/Footer";
 import Complete from "./checkout/Complete";
-
 
 function App() {
   const dispatch = useDispatch();
@@ -77,7 +76,6 @@ function App() {
             <Complete />
           </Route>
         </Switch>
-        <Footer />
       </Router>
     </>
   );
